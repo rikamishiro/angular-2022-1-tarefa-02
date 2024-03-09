@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+}
+
+nav {
+  flex: 0 1 10em; /* flex-grow flex-shrink flex-basis */
+}
+
+main {
+  flex: 1 1 auto;
+  text-align: center;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 30em) {
+
+  :host {
+    flex-direction: column;
+  }
+
+  nav {
+    text-align: center;
+    flex-basis: auto;
+  }
+
+  main {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+}
