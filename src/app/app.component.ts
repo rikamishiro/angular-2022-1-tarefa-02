@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { ListaTurmasComponent } from './components/lista-turmas/lista-turmas.component';
 import { TurmaComponent } from './components/turma/turma.component';
+import { TurmaService } from './services/turma.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,
     RouterOutlet,
     ListaTurmasComponent,
     TurmaComponent,
@@ -16,4 +19,7 @@ import { TurmaComponent } from './components/turma/turma.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+
+  public turmaService = inject(TurmaService);
+
 }

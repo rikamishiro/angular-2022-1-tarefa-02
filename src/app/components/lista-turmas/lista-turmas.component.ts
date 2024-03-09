@@ -24,6 +24,7 @@ export class ListaTurmasComponent {
 
   constructor(
   ) {
+    // Perigo! Não foi gerenciada a desinscrição:
     this.turmaService.turmas$.subscribe(
       ts => this.turmas = ts,
     );
