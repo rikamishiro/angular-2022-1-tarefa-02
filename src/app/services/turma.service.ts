@@ -52,7 +52,7 @@ export class TurmaService {
           a.nome,
         )),
       )),
-    ).subscribe(this._turmaSelecionada$);
+    ).subscribe(turmaDetalhes => this._turmaSelecionada$.next(turmaDetalhes));
   }
 
 }
