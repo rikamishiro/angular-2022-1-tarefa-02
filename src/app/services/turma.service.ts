@@ -29,15 +29,16 @@ export class TurmaService {
     ).pipe(
       map(ts => ts.map(t => new Turma(
         new Disciplina(
-          t.disciplina.codigo,
-          t.disciplina.nome,
+          t.disciplina_codigo,
+          't.disciplina.nome',
         ),
         t.ano,
         t.periodo,
-        t.alunos.map(a => new Aluno(
-          a.codigo,
-          a.nome,
-        )),
+        [],
+        // t.alunos.map(a => new Aluno(
+        //   a.codigo,
+        //   a.nome,
+        // )),
       ))),
     ).subscribe(this._turmas$);
   }

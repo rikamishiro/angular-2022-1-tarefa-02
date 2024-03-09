@@ -54,7 +54,12 @@ const TURMAS = [
 ];
 
 router.get('/', function(req, res, next){
-  res.json(TURMAS);
+  res.json(TURMAS.map(t => ({
+    _id: t._id,
+    ano: t.ano,
+    periodo: t.periodo,
+    disciplina_codigo: t.disciplina.codigo,
+  })));
 });
 
 module.exports = router;
