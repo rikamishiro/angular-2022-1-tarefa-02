@@ -2,6 +2,7 @@ import {
   Component,
   Input,
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { Turma } from '../../models/turma';
 
@@ -9,6 +10,7 @@ import { Turma } from '../../models/turma';
   selector: 'app-turma',
   standalone: true,
   imports: [
+    CommonModule,
   ],
   templateUrl: './turma.component.html',
   styleUrl: './turma.component.css',
