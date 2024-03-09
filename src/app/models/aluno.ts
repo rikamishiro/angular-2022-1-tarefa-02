@@ -1,7 +1,7 @@
 export class Aluno {
 
   constructor(
-    public readonly codigo: string,
+    public readonly codigo: number,
     public nome: string,
   ) {
   }
