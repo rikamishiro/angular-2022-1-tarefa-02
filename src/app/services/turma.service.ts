@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+
+import { ReplaySubject } from 'rxjs';
+
 import { Turma } from '../models/turma';
 import { Disciplina } from '../models/disciplina';
 import { Aluno } from '../models/aluno';
@@ -60,22 +63,24 @@ const TURMAS = [
 })
 export class TurmaService {
 
-  constructor() {
-  }
+  private _turmas$ = new ReplaySubject<Turma[]>(1);
+  public turmas$ = this._turmas$.asObservable();
 
-  public getTurmas() {
-    return TURMAS.map(t => new Turma(
-      new Disciplina(
-        t.disciplina.codigo,
-        t.disciplina.nome,
-      ),
-      t.ano,
-      t.periodo,
-      t.alunos.map(a => new Aluno(
-        a.codigo,
-        a.nome,
+  constructor() {
+    this._turmas$.next(
+      TURMAS.map(t => new Turma(
+        new Disciplina(
+          t.disciplina.codigo,
+          t.disciplina.nome,
+        ),
+        t.ano,
+        t.periodo,
+        t.alunos.map(a => new Aluno(
+          a.codigo,
+          a.nome,
+        )),
       )),
-    ));
+    );
   }
 
 }

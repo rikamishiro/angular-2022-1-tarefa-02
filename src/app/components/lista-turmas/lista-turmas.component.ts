@@ -5,6 +5,7 @@ import {
 import { CommonModule } from '@angular/common';
 
 import { TurmaService } from '../../services/turma.service';
+import { Turma } from '../../models/turma';
 
 @Component({
   selector: 'app-lista-turmas',
@@ -19,6 +20,13 @@ export class ListaTurmasComponent {
 
   public turmaService = inject(TurmaService);
 
-  public turmas = this.turmaService.getTurmas();
+  public turmas?: Turma[];
+
+  constructor(
+  ) {
+    this.turmaService.turmas$.subscribe(
+      ts => this.turmas = ts,
+    );
+  }
 
 }
