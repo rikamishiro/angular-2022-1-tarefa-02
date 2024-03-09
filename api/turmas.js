@@ -62,4 +62,10 @@ router.get('/', function(req, res, next){
   })));
 });
 
+router.get('/:_id', function(req, res, next){
+  const _id = req.params._id;
+  const turma = TURMAS.find(t => t._id === _id);
+  res.json(turma);
+});
+
 module.exports = router;

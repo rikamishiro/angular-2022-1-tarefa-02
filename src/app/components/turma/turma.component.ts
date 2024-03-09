@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Turma } from '../../models/turma';
+import { TurmaDetalhes } from '../../models/turma';
 
 @Component({
   selector: 'app-turma',
@@ -20,6 +20,6 @@ export class TurmaComponent {
   @Input({
     required: true,
   })
-  public turma!: Turma;
+  public turma!: TurmaDetalhes;
 
 }
