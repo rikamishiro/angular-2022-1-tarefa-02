@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     {
       provide: API_BASE,
-      useValue: `http://localhost:3000/api`,
+      useValue: `http://localhost:4200/api`,
     },
     importProvidersFrom(HttpClientModule),
   ],

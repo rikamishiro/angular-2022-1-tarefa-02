@@ -1,0 +1,34 @@
+.livro {
+  display: flex;
+  border-radius: .25em;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.livro span.codigo {
+  background-color: lightcoral;
+  flex-basis: 5em;
+  padding: .5em;
+  text-align: right;
+}
+
+.livro span.nome {
+  background-color: lightgreen;
+  flex-grow: 1;
+  padding: .5em;
+  text-align: left;
+}
+
+.livro span.autor {
+  background-color: lightblue;
+  flex-basis: 10em;
+  padding: .5em;
+  text-align: left;
+}
+
+.livro span.ano {
+  background-color: lightyellow;
+  flex-basis: 5em;
+  padding: .5em;
+  text-align: right;
+}
